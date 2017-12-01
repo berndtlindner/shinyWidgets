@@ -31,7 +31,7 @@
 #'
 #' }
 #' }
-dropdownButton <- function(..., circle = TRUE, status = "default", size = "default", icon = NULL,
+dropdownButton <- function(..., id="button", circle = TRUE, status = "default", size = "default", icon = NULL,
                            label = NULL, tooltip = FALSE, right = FALSE, up = FALSE, width = NULL) {
 
   status <- match.arg(
@@ -39,7 +39,7 @@ dropdownButton <- function(..., circle = TRUE, status = "default", size = "defau
     choices = c("default", "primary", "success", "info", "warning", "danger")
   )
   size <- match.arg(arg = size, choices = c("default", "lg", "sm", "xs"))
-  buttonID <- paste0("drop", sample.int(1e9, 1))
+  buttonID <- paste0("drop", id)
 
   # dropdown content
   html_ul <- list(
